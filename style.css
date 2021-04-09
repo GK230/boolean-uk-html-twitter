@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    border: black solid 1px;
+
 }
 body {
     display: grid;
@@ -19,16 +21,51 @@ aside {
 
 aside .top {
     display: grid;
-    grid-template-rows: repeat(10, 50px);
+    grid-template-areas: "icons logo" 50px
+                            "icons home" 50px
+                            "icons explore" 50px
+                            "icons notifications" 50px
+                            "icons messages" 50px
+                            "icons bookmarks" 50px
+                            "icons list" 50px
+                            "icons profile" 50px
+                            "icons more" 
+                            "button button" 50px/
+                            50px 150px
 }
 
-aside .top .logo svg.logo {
+
+aside .top .icon {
+    width: 30px;
+    display: inline-block;
+}
+
+
+aside .top .icon .logo svg.logo {
     fill: rgb(29 161 242);
     width: 50px;
-    margin: 1rem;
 }
 
+aside .top .home svg.home-icon {
+    width: 30px;
+    fill: rgb(29 161 242);
+    display: inline-block;
+}
 
+aside .top .home h3.home {
+    display: inline-block;
+}
+
+aside .top h3 {
+    display: inline-block;
+}
+
+aside .top .home {
+    h
+
+}
+
+aside .top .explore .
 
 main {
     background-color: palegreen;
