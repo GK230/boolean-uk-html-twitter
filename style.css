@@ -2,24 +2,23 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    border: black solid 1px;
 
 }
 body {
     display: grid;
     grid-template-columns: 300px 1fr 400px;
     height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 /* LEFT BAR */
 
-aside {
-    background-color: aliceblue;
+nav {
     display: grid;
     grid-template-rows: 1fr 100px;
 }
 
-aside .top {
+nav .top {
     display: grid;
     grid-template-areas: "icons logo" 50px
                             "icons home" 50px
@@ -27,45 +26,58 @@ aside .top {
                             "icons notifications" 50px
                             "icons messages" 50px
                             "icons bookmarks" 50px
-                            "icons list" 50px
+                            "icons lists" 50px
                             "icons profile" 50px
                             "icons more" 
                             "button button" 50px/
-                            50px 150px
+                            50px 150px;
+    margin: 3rem;
+    padding: 10px;
+
 }
 
+nav .top .icons {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    align-items: center;
+    margin: 0.75rem;
+    padding: 5px;
+}
 
-aside .top .icon {
+nav .top .icons:hover {
+    background-color: rgb(149, 205, 240);
+    border-radius: 20px;
+}
+
+nav .top .icon {
     width: 30px;
     display: inline-block;
 }
 
+nav .top .icon .outline {
+    stroke: black;
+    fill: none;
+}
 
-aside .top .icon .logo svg.logo {
+nav .top .icon .outline:active {
     fill: rgb(29 161 242);
-    width: 50px;
 }
 
-aside .top .home svg.home-icon {
-    width: 30px;
+
+nav .top .logo svg.logo {
     fill: rgb(29 161 242);
+    width: 40px;
+}
+
+nav .top h3 {
     display: inline-block;
 }
 
-aside .top .home h3.home {
-    display: inline-block;
+a {
+    text-decoration: none;
 }
 
-aside .top h3 {
-    display: inline-block;
-}
 
-aside .top .home {
-    h
-
-}
-
-aside .top .explore .
 
 main {
     background-color: palegreen;
