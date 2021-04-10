@@ -6,7 +6,7 @@
 }
 body {
     display: grid;
-    grid-template-columns: 325px 1fr 400px;
+    grid-template-columns: 1fr 650px 400px;
     height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
 }
@@ -34,7 +34,7 @@ nav .icons {
     grid-template-columns: 50px 1fr;
     align-items: center;
     padding: 10px;
-    margin-left: 5rem;
+    margin-left: 7rem;
     width: fit-content;
 }
 
@@ -67,7 +67,7 @@ nav .logo-wrapper {
     height: 50px;
     text-align: center;
     justify-content: center;
-    margin-left: 5rem;
+    margin-left: 7rem;
 }
 
 nav .logo-wrapper:hover {
@@ -106,7 +106,7 @@ button.tweet {
     color: white;
     font-weight: bold;
     font-size: 1rem;
-    margin: auto;
+    margin-left: 6.5rem;
 }
 
 button.tweet:hover {
@@ -117,10 +117,10 @@ nav .bottom {
     display: grid;
     grid-template-columns: 60px 100px 50px;
     align-items: center;
-    margin-left: 5rem;
+    margin-left: 7rem;
 }
 
-nav .bottom img.photo {
+img.photo {
     width: 50px;
     border-radius: 50%;
 }
@@ -141,14 +141,184 @@ nav .bottom img.menu-dots {
     width: 20px;
 }
 
-
-
-
-
+/* MAIN SECTION */
 main {
-    background-color: palegreen;
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    border-left: rgb(225 232 237) solid 0.5px;
+    border-right: rgb(225 232 237) solid 0.5px;
 }
 
+main .home {
+    border-bottom: rgb(225 232 237) solid 0.5px;
+    display: grid;
+    grid-template-columns: 550px 100px;
+}
+
+main .home .title {
+    text-align: left;
+}
+
+main .home .title h2 {
+    padding: 1rem;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+main .home .stars {
+    margin: auto;
+    padding: 0.5rem;
+
+}
+
+main .home .stars:hover {
+    border-radius: 50%;
+    background-color: rgb(183, 216, 237);
+}
+
+main .home .stars svg.star {
+    fill: #1DA1F2;
+    width: 25px;
+}
+
+main article {
+    display: grid;
+    grid-template-rows: 150px 1fr;
+    grid-row-gap: 10px;
+    background-color: #E1E8ED;
+    overflow: scroll;
+}
+
+main article .tweet {
+    display: grid;
+    grid-template: "photo what" 75px
+                    "photo tweet-icons" 75px/
+                    100px 450px;
+    background-color: white;
+} 
+
+main article .tweet .what p.what {
+    color: #657786;
+    margin: auto;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+}
+
+main article .tweet img.photo {
+    margin: 1rem;
+}
+
+main article .tweet .tweet-icons .small-icons {
+    display: inline-block;
+    width: 20px;
+    fill: #1DA1F2;
+}
+
+main article .tweet .tweet-icons button.tweet {
+    background-color: rgb(110, 187, 235);
+    width: 100px;
+    align-items: center;
+    grid: none;
+}
+
+main article .news {
+    display: grid;
+    grid-template-rows: 300px 400px 1fr;
+
+}
+
+.item {
+    display: grid;
+    grid-template: "tweeter-image heading" 20px
+                    "tweeter-image blurb" 75px
+                    "tweeter-image link" 20px
+                    "tweeter-image image" 150px
+                    "tweeter-image icons" 30px/
+                    100px 550px;
+    background-color: white;
+
+}
+
+.item .tweeter-image img.tweeter {
+    width: 50px;
+    border-radius: 50%;
+    margin: 1rem;
+}
+
+.item .heading {
+    display: inline-block;
+}
+
+.item .heading p.title {
+    font-weight: bold;
+}
+
+.item .heading p.sender, p.followers {
+    color: #657786;
+}
+
+.item .heading img {
+    width: 20px;
+}
+
+.item .link {
+    color: #1DA1F2;
+}
+
+.item img {
+    width: 400px;
+}
+
+.item .icons .tiny-icon {
+    width: 20px;
+    fill: #657786;
+}
+
+/* RIGHT BAR */
 aside {
-    background-color:peachpuff;
+    display: grid;
+    grid-template-rows: 50px 1fr;
+    padding-right: 1rem;
+    padding-left: 1rem;
+}
+
+aside .search {
+    border-bottom: rgb(225 232 237) solid 0.5px;
+    padding: 1rem;
+}
+
+aside .search .search-bar {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    background-color: #E1E8ED;
+    width: 350px;
+    height: 44§px;
+    border-radius: 30px;
+    align-items: center;
+}
+
+aside .search .search-bar .search-icon {
+    width: 22px;
+    margin: 1rem;
+    fill: #657786;
+}
+
+aside .search .search-bar p {
+    margin-left: 10px;
+    color: #657786;
+    font-size: 0.9rem;
+}
+
+aside .right-bottom {
+    display: grid;
+    grid-template-rows: 500px 500px;
+    grid-gap: 10px;
+}
+
+aside .right-bottom .happening, 
+aside .right-bottom .follow {
+    background-color: #F5F8FA;
+}
+
+
 }
