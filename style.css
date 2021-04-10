@@ -6,76 +6,123 @@
 }
 body {
     display: grid;
-    grid-template-columns: 300px 1fr 400px;
+    grid-template-columns: 325px 1fr 400px;
     height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
 }
 
 /* LEFT BAR */
-
 nav {
     display: grid;
-    grid-template-rows: 1fr 100px;
+    grid-template-areas: 
+                            "icons home" 40px
+                            "icons explore" 40px
+                            "icons notifications" 40px
+                            "icons messages" 40px
+                            "icons bookmarks" 40px
+                            "icons lists" 40px
+                            "icons profile" 40px
+                            "icons more" 40px
+                            "button button" 40px
+                            "bottom bottom" 400px/
+                            50px 1fr;
+    grid-gap: 1px;
 }
 
-nav .top {
-    display: grid;
-    grid-template-areas: "icons logo" 50px
-                            "icons home" 50px
-                            "icons explore" 50px
-                            "icons notifications" 50px
-                            "icons messages" 50px
-                            "icons bookmarks" 50px
-                            "icons lists" 50px
-                            "icons profile" 50px
-                            "icons more" 
-                            "button button" 50px/
-                            50px 150px;
-    margin: 3rem;
-    padding: 10px;
-
-}
-
-nav .top .icons {
+nav .icons {
     display: grid;
     grid-template-columns: 50px 1fr;
     align-items: center;
-    margin: 0.75rem;
-    padding: 5px;
+    padding: 10px;
+    margin-left: 4rem;
+    width: fit-content;
 }
 
-nav .top .icons:hover {
-    background-color: rgb(149, 205, 240);
-    border-radius: 20px;
+nav .icons:hover {
+    border-radius: 30px;
+    background-color: rgb(208, 234, 243);
+    fill: rgb(29 161 242);
 }
 
-nav .top .icon {
+nav .icon {
     width: 30px;
     display: inline-block;
+    fill: rgb(20 23 26);
 }
 
-nav .top .icon .outline {
-    stroke: black;
+nav .icon .filled {
+    fill: rgb(20 23 26);
+}
+
+nav .icon .outline {
+    stroke: rgb(20 23 26);
     fill: none;
 }
 
-nav .top .icon .outline:active {
-    fill: rgb(29 161 242);
+nav .logo-wrapper {
+    display: flex;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    justify-content: center;
+    margin-left: 65px;
 }
 
-
-nav .top .logo svg.logo {
-    fill: rgb(29 161 242);
-    width: 40px;
+nav .logo-wrapper:hover {
+    background-color: rgb(183, 216, 237);
+    border-radius: 50%;
 }
 
-nav .top h3 {
+nav a .svg-logo {
+    fill: rgb(29 161 242);
+    width: 35px;
+}
+
+nav h3 {
     display: inline-block;
+    width: fit-content;
 }
 
 a {
     text-decoration: none;
 }
+
+a:visited {
+    color: black;
+}
+
+a:hover {
+    color: rgb(29 161 242);
+}
+
+button.tweet {
+    background-color: rgb(29 161 242);
+    width: 225px;
+    border-radius: 30px;
+    height: 50px;
+    border: none;
+    color: white;
+    font-weight: bold;
+    font-size: 1rem;
+    margin: auto;
+}
+
+button.tweet:hover {
+    background-color: rgb(26, 144, 217)
+}
+
+nav .bottom {
+    display: grid;
+    grid-template-columns: 60px 100px 50px;
+    align-items: center;
+}
+
+nav .bottom img.photo {
+    width: 50px;
+    border-radius: 50%;
+}
+
+
 
 
 
@@ -83,6 +130,6 @@ main {
     background-color: palegreen;
 }
 
-article {
+aside {
     background-color:peachpuff;
 }
