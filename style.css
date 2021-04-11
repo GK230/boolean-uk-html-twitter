@@ -2,8 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-
 }
+
 body {
     display: grid;
     grid-template-columns: 1fr 650px 400px;
@@ -125,11 +125,11 @@ img.photo {
     border-radius: 50%;
 }
 
-nav .bottom .name-and-handle .name {
+.name-and-handle .name {
     font-weight: bold;
 }
 
-nav .bottom .name-and-handle .handle {
+.name-and-handle .handle {
     color: rgb(101 119 134);
 }
 
@@ -193,7 +193,7 @@ main article .tweet {
     display: grid;
     grid-template: "photo what" 75px
                     "photo tweet-icons" 75px/
-                    100px 450px;
+                    100px 550px;
     background-color: white;
 } 
 
@@ -282,19 +282,15 @@ aside {
     padding-left: 1rem;
 }
 
-aside .search {
-    border-bottom: rgb(225 232 237) solid 0.5px;
-    padding: 1rem;
-}
-
 aside .search .search-bar {
     display: grid;
     grid-template-columns: 40px 1fr;
     background-color: #E1E8ED;
     width: 350px;
-    height: 44§px;
+    height: 40px;
     border-radius: 30px;
     align-items: center;
+    margin: 5px 0;
 }
 
 aside .search .search-bar .search-icon {
@@ -311,14 +307,83 @@ aside .search .search-bar p {
 
 aside .right-bottom {
     display: grid;
-    grid-template-rows: 500px 500px;
+    grid-template-rows: 500px 300px;
     grid-gap: 10px;
+    background-color: white;
+    overflow: scroll;
 }
 
-aside .right-bottom .happening, 
-aside .right-bottom .follow {
+aside .right-bottom .bottom-wrapper .right {
+    border-radius: 30px;
     background-color: #F5F8FA;
 }
 
+aside .right-bottom .bottom-wrapper {
+    background-color: #F5F8FA;
+    width: 350px;
+    height: 500px;
+    border-radius: 20px;
+    margin-top: 5px;
+}
+
+aside .right-bottom .bottom {
+    height: 300px;
+    display: grid;
+    grid-template-rows: 50px 75px 75px 50px;
+}
+
+aside .right-bottom .top .happening {
+    display: grid;
+    grid-template-rows: 50px 1fr 1fr 1fr 1fr 1fr 50px;
+}
+
+aside .right-bottom .inside-rows {
+    border-bottom: #E1E8ED solid 1px;
+}
+
+aside .right-bottom .bottom-wrapper .right .header h3 {
+    padding: 1rem;
+    font-weight: 1100;
+}
+
+aside .right-bottom .bottom-wrapper .right .footer h4 {
+    color: #1DA1F2;
+    font-weight: 600;
+    padding: 1rem;
+}
+
+aside .right-bottom .top .happening .happening-rows {
+    display: grid;
+    grid-auto-rows: repeat(auto-fill, 100px);
+    
+}
+
+aside .right-bottom .bottom .follow {
+    display: grid;
+    grid-template-rows: 50px 100px 100px 50px;
+}
+
+aside .right-bottom .bottom .follow-rows img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: contain;
 
 }
+
+button.follow {
+    width: 100px;
+    height: 50px;
+    border: #1DA1F2 solid 1px;
+    padding: 1rem;
+    color: #1DA1F2;
+    font-weight: 600;
+    font-size: 1.5rem;
+    border-radius: 30px;
+
+}
+
+
+
+
+
