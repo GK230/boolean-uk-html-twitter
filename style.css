@@ -9,34 +9,12 @@ body {
     grid-template-columns: 1fr 650px 400px;
     height: 100vh;
     font-family: Arial, Helvetica, sans-serif;
+    color: #14171A;
+    overflow: hidden;
 }
 
 /* LEFT BAR */
-nav {
-    display: grid;
-    grid-template-areas: 
-                            "icons home" 30px
-                            "icons explore" 30px
-                            "icons notifications" 30px
-                            "icons messages" 30px
-                            "icons bookmarks" 30px
-                            "icons lists" 30px
-                            "icons profile" 30px
-                            "icons more" 30px
-                            "button button" 30px
-                            "bottom bottom" 100px/
-                            50px 1fr;
-    grid-gap: 1px;
-}
 
-nav .icons {
-    display: grid;
-    grid-template-columns: 50px 1fr;
-    align-items: center;
-    padding: 10px;
-    margin-left: 7rem;
-    width: fit-content;
-}
 
 nav h3.filled.outline:hover {
     border-radius: 30px;
@@ -61,13 +39,30 @@ nav .icon .outline {
     fill: none;
 }
 
+nav {
+    margin-left: 2rem;
+    margin-top: 1rem;
+    margin-right: 1rem;
+}
+
+nav ul li {
+    list-style: none;
+    margin-left: 6rem;
+    margin-bottom: 2rem;
+}
+
+nav ul li .list-item {
+    display: grid;
+    grid-template-columns: 30px auto;
+    align-items: center;
+}
+
 nav .logo-wrapper {
     display: flex;
     width: 50px;
     height: 50px;
     text-align: center;
     justify-content: center;
-    margin-left: 7rem;
 }
 
 nav .logo-wrapper:hover {
@@ -83,6 +78,9 @@ nav a .svg-logo {
 nav h3 {
     display: inline-block;
     width: fit-content;
+    color: #14171A;
+    margin-left: 1.5rem;
+
 }
 
 a {
@@ -106,7 +104,7 @@ button.tweet {
     color: white;
     font-weight: bold;
     font-size: 1rem;
-    margin-left: 6.5rem;
+    margin-left: 5rem;
 }
 
 button.tweet:hover {
@@ -117,7 +115,9 @@ nav .bottom {
     display: grid;
     grid-template-columns: 60px 100px 50px;
     align-items: center;
-    margin-left: 7rem;
+    margin-left: 6rem;
+    position: absolute;
+    bottom: 1rem;
 }
 
 img.photo {
@@ -152,7 +152,7 @@ main {
 main .home {
     border-bottom: rgb(225 232 237) solid 0.5px;
     display: grid;
-    grid-template-columns: 550px 100px;
+    grid-template-columns: 1fr 100px;
 }
 
 main .home .title {
@@ -166,9 +166,9 @@ main .home .title h2 {
 }
 
 main .home .stars {
-    margin: auto;
-    padding: 0.5rem;
-
+    margin: 1rem;
+    margin-left: 3rem;
+    
 }
 
 main .home .stars:hover {
@@ -186,32 +186,47 @@ main article {
     grid-template-rows: 150px 1fr;
     grid-row-gap: 10px;
     background-color: #E1E8ED;
-    overflow: scroll;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    width: 100%;
+    height: calc(100vh - 50px);
 }
 
 main article .tweet {
     display: grid;
-    grid-template: "photo what" 75px
-                    "photo tweet-icons" 75px/
-                    100px 550px;
+    grid-template-rows: 75px 75px;
     background-color: white;
 } 
 
-main article .tweet .what p.what {
-    color: #657786;
-    margin: auto;
-    padding: 1.5rem;
-    font-size: 1.5rem;
+main article .tweet .photo-and-text {
+    display: grid;
+    grid-template-columns: 50px 1fr;
+    margin: 1rem;
+    align-items: center;
 }
 
-main article .tweet img.photo {
-    margin: 1rem;
+main article .tweet .photo-and-text p.what {
+    color: #657786;
+    font-size: 1.4rem;
+    display: inline-block;
+    margin-left: 1rem;
+}
+
+main article .tweet .tweet-icons {
+    margin-left: 6rem;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    position: relative;
 }
 
 main article .tweet .tweet-icons .small-icons {
     display: inline-block;
     width: 20px;
     fill: #1DA1F2;
+    margin-right: 1rem;
+    margin-top: 1rem;
+    font-weight: bold;
 }
 
 main article .tweet .tweet-icons button.tweet {
@@ -219,24 +234,79 @@ main article .tweet .tweet-icons button.tweet {
     width: 100px;
     align-items: center;
     grid: none;
+    position: absolute;
+    right: 1rem;
 }
 
 main article .news {
     display: grid;
-    grid-template-rows: 300px 400px 1fr;
-
+    grid-template-rows: 500px 400px 1fr;
 }
 
 .item {
     display: grid;
-    grid-template: "tweeter-image heading" 20px
-                    "tweeter-image blurb" 75px
-                    "tweeter-image link" 20px
-                    "tweeter-image image" 150px
-                    "tweeter-image icons" 30px/
-                    100px 550px;
+    grid-template: "tweeter-image heading" 50px
+                    "tweeter-image about" 1fr
+                    "tweeter-image icons" 50px/
+                    75px 1fr;
     background-color: white;
+    height: 200px;
+    justify-content: center;
+}
 
+.item .tweeter-image {
+    grid-area: tweeter-image;
+}
+
+.item .about {
+    grid-area: about;
+}
+
+.item .heading {
+    grid-area: heading;
+    display: grid;
+    grid-template-columns: 1fr 50px;
+    margin-top: 1rem;
+    position: relative;
+
+}
+
+.item .heading .heading-info {
+    display: inline-block;
+}
+
+.item .heading .menu {
+    display: inline-block;
+    position: absolute;
+    right: 2rem;
+    top: 0;
+}
+
+.item .heading .menu img.menu-dots {
+    display: inline-block;
+}
+
+.item .heading .name {
+    font-weight: bold;
+    display: inline-block;
+}
+
+.item .heading .sender {
+    display: inline-block;
+
+}
+
+.item .heading .time {
+    display: inline-block;
+
+}
+
+.item .icons {
+    grid-area: icons;
+}
+
+.item .icons .tiny-icon {
+    margin-right: 6rem;
 }
 
 .item .tweeter-image img.tweeter {
@@ -253,7 +323,7 @@ main article .news {
     font-weight: bold;
 }
 
-.item .heading p.sender, p.followers {
+.item .heading p.sender, p.time {
     color: #657786;
 }
 
@@ -343,13 +413,26 @@ aside .right-bottom .inside-rows {
 
 aside .right-bottom .bottom-wrapper .right .header h3 {
     padding: 1rem;
-    font-weight: 1100;
+    font-weight: 1400;
+    font-size: 1.5rem;
+    margin-left: 5px;
 }
 
 aside .right-bottom .bottom-wrapper .right .footer h4 {
     color: #1DA1F2;
     font-weight: 600;
     padding: 1rem;
+    margin-left: 5px;
+}
+
+aside .right-bottom .bottom-wrapper .right .footer {
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+aside .right-bottom .bottom-wrapper .right .footer:hover {
+    background-color: #E1E8ED;
+    transition: 0.4s;
 }
 
 aside .right-bottom .top .happening .happening-rows {
@@ -360,7 +443,13 @@ aside .right-bottom .top .happening .happening-rows {
 
 aside .right-bottom .bottom .follow {
     display: grid;
-    grid-template-rows: 50px 100px 100px 50px;
+    grid-template-rows: 52px 200px 50px;
+    grid-gap: 2px;
+}
+
+aside .right-bottom .bottom .follow .inside-rows {
+    display: grid;
+    grid-template-rows: 100px 100px;
 }
 
 aside .right-bottom .bottom .follow-rows img {
@@ -382,13 +471,88 @@ button.follow {
     border-radius: 30px;
 }
 
+button.follow:hover {
+    background-color: rgb(158, 200, 226);
+    transition: 0.2s;
+}
+
 aside .right-bottom .bottom .follow .inside-rows-row {
     display: grid;
-    grid-template-columns: 75px 150px 125px;
-    margin: 1rem;
+    grid-template-columns: 60px 140px 110px;
+    padding: 1rem;
     align-items: center;
     justify-content: left;
+    border-bottom: solid 1px #E1E8ED;
+    border-top: solid 1px #E1E8ED;
 }
+
+aside .right-bottom .bottom .follow .inside-rows-row:hover {
+    background-color: #E1E8ED;
+}
+
+.dot {
+    height: 2px;
+    width: 2px;
+    background-color: #657786;
+    border-radius: 50%;
+    display: inline-block;
+    justify-content: center;
+    margin: 2px;
+}
+
+aside .right-bottom .top .happening .inside-rows .row-grid {
+    display: grid;
+    grid-template:
+                     "heading photo" 20px
+                    "blurb photo"  100px/
+                    250px 100px;
+    grid-gap: 2px;
+    margin-left: 1.5rem;
+}
+
+img.happening-photo {
+    width: 60px;
+    border-radius: 10px;
+}
+
+aside .right-bottom .top .happening .inside-rows .row2 .heading {
+    font-size: 0.75rem;
+    color: #657786;
+    display: grid;
+    grid-template-columns: max-content 5px 100px;
+    align-items: center;
+
+    
+}
+
+aside .right-bottom .top .happening .inside-rows .row2 .heading p, span {
+    display: inline;
+}
+
+aside .right-bottom .top .happening .inside-rows .row2 .blurb {
+    font-weight: bold;
+}
+
+img.menu-dots {
+    width: 20px;
+}
+
+aside .right-bottom .top .happening .inside-rows .row-small-grid {
+    display: grid;
+    grid-template: "heading menu-dots" 20px
+                    "blurb menu-dots" 75px
+                    "footer menu-dots" 20px/
+                    150px 50px;
+    border-top: solid 1px #AAB8C2;
+    
+}
+
+
+
+
+
+
+
 
 
 
