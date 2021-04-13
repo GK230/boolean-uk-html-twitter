@@ -344,6 +344,89 @@ main article .news {
     fill: #657786;
 }
 
+main article .follow {
+    display: grid;
+    grid-template-rows: 50px repeat(3, 100px) 50px;
+    background-color: white;
+}
+
+main article .follow .header {
+    font-weight: bold;
+    font-size: 1.5rem;
+    border-bottom: solid 1px #E1E8ED;
+}
+
+main article .follow .header h3 {
+    margin: 1rem;
+}
+
+main article .follow .footer h4 {
+    margin: 1rem;
+    color: #1DA1F2;
+}
+
+main article .follow .item {
+    display: grid;
+    grid-template: "item-header item-header item-header" 30px
+                    "photo name-and-handle button" 75px
+                    "description description description" 1fr/
+                    75px 1fr 100px;
+    border-bottom: solid 1px #E1E8ED;
+}
+
+main article .follow .item .item-header {
+    grid-area: item-header;
+    color: #657786;
+    margin-left: 3rem;
+    margin-top: 1rem;
+}
+
+main article .follow .item .item-header svg.person {
+    width: 15px;
+    fill: #657786;
+    margin-right: 1.5rem;
+}
+
+main article .follow .item .item-header p {
+    display: inline-block;
+    font-weight: bold;
+}
+
+main article .follow .item .photo {
+    grid-area: photo;
+}
+
+main article .follow .item .photo img.photo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 0.5rem;
+    margin-left: 1rem;
+}
+
+main article .follow .item .name-and-handle {
+    grid-area: name-and-handle;
+    margin-left: 1rem;
+    margin-top: 0.5rem;
+}
+
+main article .follow .item button {
+    grid-area: button;
+    margin-right: 2rem;
+}
+
+
+main article .follow .item .description {
+    grid-area: description;
+}
+
+main article .follow .item .description p {
+    margin-left: 5.5rem;
+    margin-right: 2rem;
+}
+
+
+
 /* RIGHT BAR */
 aside {
     display: grid;
@@ -387,14 +470,23 @@ aside .right-bottom {
 aside .right-bottom .happening {
     border-radius: 20px;
     background-color: #F5F8FA;
+    display: grid;
+    grid-template-rows: 50px repeat(3, minmax(50px, 1fr)) 50px;
 }
 
 aside .right-bottom .happening .header {
     border-bottom: solid 1px #E1E8ED;
     padding-bottom: 1rem;
     margin-top: 1rem;
+}
+
+aside .right-bottom .happening .header h3 {
     margin-left: 1rem;
-    
+}
+
+aside .right-bottom .footer {
+    color: #1DA1F2;
+    margin-left: 1rem;
 }
 
 aside .right-bottom .bottom {
@@ -407,7 +499,6 @@ aside .right-bottom .top .happening {
     display: grid;
     grid-template-rows: 50px repeat(5, 1fr) 50px;
 }
-
 aside .right-bottom .inside-rows {
     border-bottom: #E1E8ED solid 1px;
 }
@@ -419,19 +510,15 @@ aside .right-bottom .bottom-wrapper .right .header h3 {
     margin-left: 5px;
 }
 
-aside .right-bottom .bottom-wrapper .right .footer h4 {
+aside .right-bottom .follow .footer h4 {
     color: #1DA1F2;
     font-weight: 600;
     padding: 1rem;
     margin-left: 5px;
 }
 
-aside .right-bottom .bottom-wrapper .right .footer {
-    border-bottom-left-radius: 20px;
-    border-bottom-right-radius: 20px;
-}
 
-aside .right-bottom .bottom-wrapper .right .footer:hover {
+aside .right-bottom .follow .footer:hover {
     background-color: #E1E8ED;
     transition: 0.4s;
 }
@@ -442,18 +529,18 @@ aside .right-bottom .top .happening .happening-rows {
     
 }
 
-aside .right-bottom .bottom .follow {
+aside .right-bottom .follow {
     display: grid;
     grid-template-rows: 52px 200px 50px;
     grid-gap: 2px;
 }
 
-aside .right-bottom .bottom .follow .inside-rows {
+aside .right-bottom .follow .inside-rows {
     display: grid;
     grid-template-rows: 100px 100px;
 }
 
-aside .right-bottom .bottom .follow-rows img {
+aside .right-bottom .inside-rows img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -501,34 +588,60 @@ aside .right-bottom .bottom .follow .inside-rows-row:hover {
     margin: 2px;
 }
 
-aside .right-bottom .top .happening .inside-rows .row-grid {
+aside .right-bottom .happening .inside-rows .row-grid {
     display: grid;
     grid-template:
-                     "heading photo" 20px
-                    "blurb photo"  100px/
-                    250px 100px;
+                    "heading photo" 20px
+                    "blurb photo"  1fr/
+                    1fr 100px;
     grid-gap: 2px;
-    margin-left: 1.5rem;
+    border-bottom: #E1E8ED;
+    margin-left: 1rem;
+    margin-top: 1rem;
 }
+
+aside .right-bottom .happening .inside-rows .row-grid .heading {
+    grid-area: heading;
+    font-size: 0.75rem;
+
+}
+
+aside .right-bottom .happening .inside-rows .row-grid .heading p {
+    display: inline-block;
+}
+
+aside .right-bottom .happening .inside-rows .row-grid .blurb {
+    grid-area: blurb;
+    font-weight: bold;
+}
+
+aside .right-bottom .happening .inside-rows .row-grid .photo {
+    grid-area: photo;
+    position: relative;
+}
+
+aside .right-bottom .happening .inside-rows .row-grid .photo img.happening-photo {
+    position: absolute;
+    right: 1rem;
+}
+
+
+
+
 
 img.happening-photo {
     width: 60px;
     border-radius: 10px;
 }
 
-aside .right-bottom .top .happening .inside-rows .row2 .heading {
+aside .right-bottom .top .happening .inside-rows .row-grid .heading {
     font-size: 0.75rem;
     color: #657786;
     display: grid;
-    grid-template-columns: max-content 5px 100px;
-    align-items: center;
-
-    
+    grid-template-columns: 1fr 50px;
 }
 
-aside .right-bottom .top .happening .inside-rows .row2 .heading p, span {
-    display: inline;
-}
+
 
 aside .right-bottom .top .happening .inside-rows .row2 .blurb {
     font-weight: bold;
@@ -552,17 +665,16 @@ aside .right-bottom .top .happening .inside-rows .row-small-grid .heading {
 }
 
 aside .right-bottom .top .happening .inside-rows .row-small-grid .blurb {
-    grid-area: heading;
+    grid-area: blurb;
 }
 
 aside .right-bottom .top .happening .inside-rows .row-small-grid .footer {
-    grid-area: heading;
+    grid-area: footer;
 }
 
 aside .right-bottom .top .happening .inside-rows .row-small-grid .menu-dots {
-    grid-area: heading;
+    grid-area: menu-dots;
 }
- */
 
 
 
